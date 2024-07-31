@@ -1,0 +1,90 @@
+<div class="container">
+  <div class="row p-5 border bg-primary rounded-3 mb-5">
+    <div class="col-md-12">
+      <div class="display-1 fw-bold text-white">1 : Structural Directive</div>
+      <span class="text-white">(*ngIf)</span>
+      <button class="btn btn-success" (click)="navigateToAttribute()">Want To Go Attribute Directive with Routing by .ts</button>
+    </div>
+  </div>
+  <div class="row border py-3 rounded-3">
+    <div class="col-md-3 text-center">
+      <div *ngIf="isMyDiv1IsVisible" class="p-3 mb-4 bg-red text-white">Div-1</div>
+      <button class="btn btn-secondary me-5" (click)="hideMyDiv()">Hide Div</button>
+      <button class="btn btn-primary" (click)="ShowMyDiv()">Show DIv</button>
+
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div *ngIf="isMyDiv2IsVisible" class="p-3 mb-4 bg-yellow">Div-2</div>
+      <button class="btn btn-primary" (click)="toggleMyButton()">toggle (Click me To view Div)</button>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div *ngIf="num1 == num2" class="p-3 mb-4 bg-blue">Div-3</div>
+      <input type="text" [(ngModel)]="num1" placeholder="num-1">
+      <input type="text" [(ngModel)]="num2" placeholder="num-2">
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div *ngIf="isMyDiv4IsVisible" class="p-3 mb-4 bg-success">Div-3</div>
+      <input [(ngModel)]="isMyDiv4IsVisible" type="checkbox">
+    </div>
+    <div class="col-md-3 text-center">
+      <div *ngIf="selectedCity == 'Mumbai'" class="p-3 mb-4 bg-success">Div-3</div>
+      <select [(ngModel)]="selectedCity" name="" id="">
+        <option value="">Select City</option>
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Nashik">Nashik</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5 border-top border-3 border-dark">
+  <div class="container">
+    <div class="row p-5 mt-5 border bg-primary rounded-3 mb-5">
+      <div class="col-md-12">
+        <div class="display-1 fw-bold text-white">2: Structural Directive</div>
+        <span class="text-white">(*ngFor)</span>
+      </div>
+    </div>
+  </div>
+  <div class="row border py-3 rounded-3 justify-content-center">
+    <div class="col-md-3">
+      <ul>
+        <li *ngFor="let city of CityArray" class="h6 fw-bold">{{city}}</li>
+      </ul>
+    </div>
+    <div class="col-md-3 text-center">
+      <select name="" id="">
+        <option *ngFor="let City of CityArray" value="CityArray">{{City}}</option>
+      </select>
+    </div>
+    <div class="col-md-3 text-center">
+      <select name="" id="">
+        <option *ngFor="let StudentsData of studentlist" [value]="StudentsData.studentId">{{StudentsData.name}}</option>
+      </select>
+    </div>
+    <div class="col-md-3 text-center">
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>IsActive</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let StudentsData of studentlist">
+            <td>{{StudentsData.studentId}}</td>
+            <td>{{StudentsData.name}}</td>
+            <td>{{StudentsData.City}}</td>
+            <td>{{StudentsData.IsActive}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>

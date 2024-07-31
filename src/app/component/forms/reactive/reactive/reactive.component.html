@@ -1,0 +1,109 @@
+<div class="container">
+  <div class="row text-white text-center p-5 rounded-3 bg-purple">
+    <div class="col-md-12">
+      <h1 class="display-4">Forms</h1>
+      <span lass="text-white display-6">(Reactive Forms)</span>
+    </div>
+  </div>
+  <div class="row form_01">
+    <div class="col-md-8  my-5 p-5 border  rounded-3">
+      <div class="text-center h3 fw-bold">Reactive Form </div>
+      <form class="row" [formGroup]="studentForm">
+        <div class="col-md-12">
+          <input type="text" placeholder="Your Name" formControlName="name" class="form-control" name="name" id="validationCustom01">
+
+          @if (studentForm.controls['name'].touched && studentForm.controls['name'].errors?.['required']) {
+            <span class="text-danger">Please filed this field</span>
+          }
+          @else if (studentForm.controls['name'].touched && studentForm.controls['name'].errors?.['minlength']) {
+            <span class="text-danger">minium 4 Char Are arequired</span>
+          }
+
+        </div>
+        <div class="col-md-6">
+          <input type="number" placeholder="Your Phone Number"  formControlName="mobileNumber" class="form-control" name="mobileNumber">
+          @if (studentForm.controls['mobileNumber'].touched && studentForm.controls['mobileNumber'].errors?.['required']) {
+            <span class="text-danger">Please filed this field</span>
+          }
+          @else if (studentForm.controls['mobileNumber'].touched && studentForm.controls['mobileNumber'].errors?.['minlength']) {
+            <span class="text-danger">Enter 10 digit Mobile Number</span>
+          }
+        </div>
+        <div class="col-md-6">
+          <div class="input-group has-validation">
+            <input type="text" placeholder="Your Email Id"  formControlName="email" class="form-control" name="email"
+              aria-describedby="inputGroupPrepend">
+              @if (studentForm.controls['email'].touched && studentForm.controls['email'].errors?.['required']) {
+                <span class="text-danger">Please filed this field</span>
+              }
+              @else if (studentForm.controls['email'].touched && studentForm.controls['email'].errors?.['email']) {
+                <span class="text-danger">Enter Your Valid Mail Id</span>
+              }
+          </div>
+        </div>
+        <div class="col-md-6">
+          <select class="form-select"  formControlName="state" aria-label="Default select example" name="state">
+            <option value="" selected>Open this select menu</option>
+            <option value="maharashrta">Maharashrta</option>
+            <option value="goa">Goa</option>
+            <option value="gujrat">Gujrat</option>
+          </select>
+          <div class="">
+            @if (studentForm.controls['state'].touched && studentForm.controls['state'].errors?.['nullvalidator']) {
+              <span class="text-danger">Please Select The Your State</span>
+            }
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Your City"  formControlName="city" class="form-control" name="city" id="validationCustom03">
+          @if (studentForm.controls['city'].touched && studentForm.controls['city'].errors?.['required']) {
+            <span class="text-danger">Please filed this field</span>
+          }
+          @else if (studentForm.controls['city'].touched && studentForm.controls['city'].errors?.['minlength']) {
+            <span class="text-danger">Enter Your City Min 3 Charactor</span>
+          }
+        </div>
+
+        <div class="col-12 ">
+          <div class="form-floating">
+            <textarea class="form-control" name="message"  formControlName="message" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Comments</label>
+            @if (studentForm.controls['message'].touched && studentForm.controls['message'].errors?.['required']) {
+              <span class="text-danger">Please filed this field</span>
+            }
+            @else if (studentForm.controls['message'].touched && studentForm.controls['message'].errors?.['minlength']) {
+              <span class="text-danger">Your Message Should be in at least 10 words</span>
+            }
+          </div>
+          <div class="">
+
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input"  formControlName="isAcceptTerms" type="checkbox" value="" id="invalidCheck">
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="">
+              @if (studentForm.controls['isAcceptTerms'].touched && studentForm.controls['isAcceptTerms'].errors?.['requiredtrue']) {
+                <span class="text-danger">Click On checkbox to complete Your Form</span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3   text-center">
+          <button class="btn btn-success me-4" (click)="resetForm()" type="submit">Reset Form</button>
+          <!-- {{form.invalid}} -->
+          <button class="btn btn-primary" [disabled]="studentForm.invalid" type="submit" (click)="onSave()">Submit
+            form</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-4 ">
+      {{formValue | json}}
+    </div>
+  </div>
+</div>

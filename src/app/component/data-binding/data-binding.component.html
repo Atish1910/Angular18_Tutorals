@@ -1,0 +1,53 @@
+<div class="container">
+  <div class="row border">
+    <div class="col-md-12 text-center">
+      <h1 class="display-3">hi i Am Data Binding</h1>
+
+      <p class="text-primary">Name : {{myName}}</p>
+      <p [class]="MyColor">Email : {{myMailId}}</p>
+      <p class="text-primary">Phone : {{MyContact}}</p>
+      <div class="mb-5">
+        <button class="btn btn-primary px-5" (click)="myEvent('i am Happy that You are working heard')">Click Me to watch my Openion About You</button>
+      </div>
+      <div class="mb-5">
+        <button class="btn btn-primary px-5" (click)="ChangeMyName()">Click Here To Change my name</button>
+      </div>
+    </div>
+  </div>
+  <div class="row border pb-5" >
+    <div class="col-md-3">
+        1Way From .ts to .html
+    </div>
+    <div class="col-md-3">
+        <h4>{{CourseName}}</h4>
+    </div>
+    <div class="col-md-3">
+        <input type="text" value="{{CourseName}}" placeholder="">
+        <input type="text" [(ngModel)]="CourseName">
+        <input type="{{inputType}}" value="" placeholder="">
+        <input type="{{inputType2}}" value="" placeholder="">
+    </div>
+</div>
+
+<div class="row border rounded mt-5">
+    <h1 class="text-primary pb-5">Property Binding</h1>
+
+    <p [class]="myClassName">Angular v18</p>
+</div>
+
+<div class="row border rounded mt-5">
+    <h1 class="text-primary pb-5">Event Hendler</h1>
+
+    <button class="btn btn-success px-5 py-3" (click)="myEvent('I am HappY that my button is working')">Click On button To Know Event</button>
+</div>
+<div class="py-5">
+    <h3>{{HereIsMyName()}}</h3>
+</div>
+
+
+<select name="" id="" [(ngModel)] ="City">
+    <option value="Pune">Pune</option>
+    <option value="Mumbai">Mumbai</option>
+    <option value="Goa">Goa</option>
+</select>
+</div>

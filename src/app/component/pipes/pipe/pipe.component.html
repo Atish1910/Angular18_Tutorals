@@ -1,0 +1,66 @@
+<div class="container">
+    <div class="row bg-purple p-5 rounded-3">
+        <div class="col-md-12 text-center">
+            <h1 class="display-4 text-white">Pipes</h1><span class=" text-white">(Default & Custom)</span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row ">
+        <div class="col-md-4 text-center">
+            original Value : {{firstName}}
+            <br>
+            after Pipe - {{firstName | uppercase}}
+        </div>
+        
+        <div class="col-md-4 text-center">
+            original Value : {{firstName}}
+            <br>
+            after Pipe - {{firstName | lowercase}}
+        </div>
+        <div class="col-md-4 text-center">
+            original Value : {{firstName}}
+            <br>
+            after Pipe - {{firstName | titlecase}}
+        </div>
+        
+        <div class="col-md-4 pt-5 text-center">
+            original Value : {{currentDate}}
+        </div>
+        
+        <div class="col-md-4 text-center">
+            original Value : {{currentDate}}
+            <br>
+            after Pipe - {{currentDate | date}}
+        </div>
+        
+        <div class="col-md-4 text-center">
+            original Value : {{currentDate}}
+            <br>
+            after Pipe - {{currentDate | date : 'dd/mm/yyyy'}}
+        </div>
+        
+        <div class="col-md-4 text-center">
+            original Value : {{student}}
+            <br>
+            after Pipe - {{student | json}}
+        </div>
+
+        
+        <div class="col-md-4 text-center mt-5 ">
+            original Value : {{currentTime}}
+            <br>
+            <!-- after Pipe - {{currentTime | async }} -->
+            <!-- after Pipe - {{currentTime | async | date:'hh:mm:ss'}} -->
+        </div>
+
+        
+        <div class="col-md-4 text-center mt-5 text-white p-5 rounded-3 bg-purple">
+            original Value : {{student.state}}
+            <br>
+            after Pipe - {{student.state | na}}
+        </div>
+    </div>
+</div>
+

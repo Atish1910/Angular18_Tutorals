@@ -1,0 +1,94 @@
+<div class="container">
+  <div class="row p-5 border bg-primary rounded-3 mb-5">
+    <div class="col-md-12">
+      <div class="display-6 fw-bold text-white">1 : Attribute Directive</div>
+      <span class="text-white "></span>
+      <button class="btn btn-success mt-5" [routerLink]="['/directive-structural']">Want To Go Structural Directive</button>
+    </div>
+  </div>
+  <div class="row border py-3 rounded-3">
+    <div class="col-md-3 text-center">
+      <div [ngClass]="div1BgColor" class="p-3 mb-4 text-white">Div-1</div>
+      <button class="btn btn-secondary bg-red me-5" (click)="addRedClass()">Div Red</button>
+      <button class="btn btn-primary bg-blue" (click)="addBlueClass()">Div Blue</button>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div class="p-3 mb-4" [ngClass]="isDiv2Active == true ? 'bg-red' : 'bg-yellow' ">Div-2</div>
+      <button class="btn btn-primary" (click)="toggleButton()">toggle (Click me To Change div color)</button>
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div [ngClass]="num1 == num2 ? 'bg-blue text-white' : 'bg-white text-primary border rounded-3'" class="p-3 mb-4 ">
+        Div-3</div>
+      <input type="text" [(ngModel)]="num1" placeholder="num-1">
+      <input type="text" [(ngModel)]="num2" placeholder="num-2">
+    </div>
+
+    <div class="col-md-3 text-center">
+      <div
+        [ngClass]="isActive == true ? 'bg-white text-primary border rounded-3 ' : 'bg-red text-white border rounded-3 '"
+        class="p-3 mb-4">Div-3</div>
+      <input [(ngModel)]="isActive" type="checkbox">
+    </div>
+    <div class="col-md-3 text-center">
+      <div class="p-3 mb-4 bg-success">Div-3</div>
+      <select name="" id="">
+        <option value="">Select City</option>
+        <option value="Pune">Pune</option>
+        <option value="Mumbai">Mumbai</option>
+        <option value="Nashik">Nashik</option>
+      </select>
+    </div>
+  </div>
+</div>
+
+<div class="container-fluid mt-5 border-top border-3 border-dark">
+  <div class="container">
+    <div class="row p-5 mt-5 border bg-primary rounded-3 mb-5">
+      <div class="col-md-12">
+        <div class="display-6 fw-bold text-white">2: Attribute Directive</div>
+        <span class="text-white"></span>
+      </div>
+    </div>
+    <div class="row">
+
+      <div class="col-md-6 text-center">
+        <table class="table table-border">
+          <thead>
+            <tr>
+              <th>studentId</th>
+              <th>name</th>
+              <th>gender</th>
+              <th>City</th>
+              <th>studentMarks</th>
+              <th>isActive</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let StudentsData of studentlist">
+              <td>{{StudentsData.studentId}}</td>
+              <td>{{StudentsData.name}}</td>
+              <td>{{StudentsData.gender}}</td>
+              <td>{{StudentsData.City}}</td>
+
+              <td>
+
+                <div class="progress">
+                  <div class="progress-bar" [ngStyle]="{ 'width' : StudentsData.studentMarks+'%'}">
+                    {{StudentsData.studentMarks}}</div>
+                </div>
+              </td>
+
+              <td [ngStyle]="{'background-color': StudentsData.isActive ? 'yellow' : 'red'}">
+                <span>{{StudentsData.isActive ? 'Active' : 'De-active'}}</span>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-6">
+        <div class="" [ngStyle]="customStyle">Its Working</div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,231 @@
+:root {
+    --fcolor: #333333;
+    --gray: #848484;
+    --acolor: #313437;
+    --bcolor: #41436c;
+    --blue: #0180c3;
+    --dark_purple: #343869;
+    --yellow: #ceaa32;
+    --purple: #a44283;
+    --green: #007567;
+    --footer_01: #e6e8e7;
+    --skin: #ffe0c0;
+    --dskin: #b3805e;
+    --font_01: "Roboto", sans-serif;
+    --font_02: 'Tw Cen MT';
+}
+
+body {
+    font-family: var(--font_01);
+    line-height: 1.5;
+    font-weight: 300;
+    color: #313437;
+    font-size: 20px;
+}
+
+.letter_spac {
+    letter-spacing: 4px;
+}
+
+.program_01 .col-md-7 {
+    height: 300px;
+}
+
+@media (min-width: 768px) {
+
+    .program_01 .col-md-7 {
+        height: unset;
+    }
+
+    .letter_spac {
+        letter-spacing: 6px;
+    }
+}
+
+.text-purple {
+    color: var(--purple) !important;
+}
+
+.text-dark_purple {
+    color: var(--dark_purple) !important;
+}
+
+.text-yellow {
+    color: var(--yellow) !important;
+}
+
+.text-blue {
+    color: var(--blue) !important;
+}
+
+.text-gray {
+    color: var(--gray);
+}
+
+.text-fcolor {
+    color: var(--fcolor);
+}
+
+.text-footer_01 {
+    color: var(--footer_01);
+}
+
+.bg-slider {
+    background-color: #343434;
+}
+
+.text-tcolor {
+    color: var(--tcolor) !important;
+}
+
+.text-green {
+    color: var(--green) !important;
+}
+
+.text-acolor {
+    color: var(--acolor);
+}
+
+h6,
+.h6,
+h5,
+.h5,
+h4,
+.h4,
+h3,
+.h3,
+h2,
+.h2,
+h1,
+.h1 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-family: var(--font_02);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--acolor);
+    letter-spacing: 2px;
+    color: #000000;
+}
+
+p {
+    font-family: var(--font_02);
+    font-weight: 500;
+}
+
+.bg_img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.btn:focus {
+    outline: 0;
+    box-shadow: unset;
+}
+
+.bg_contain {
+    background-size: contain !important;
+}
+
+.bg-footer_01 {
+    background-color: var(--footer_01);
+}
+
+.bg-blue {
+    background-color: var(--blue);
+}
+
+.bg-dark_purple {
+    background-color: var(--dark_purple);
+}
+
+.bg-purple {
+    background-color: var(--purple);
+}
+
+.bg_position_t {
+    background-position: top;
+}
+
+.bg_position_b {
+    background-position: bottom !important;
+}
+
+.bg-yellow {
+    background-color: var(--yellow);
+}
+
+.bg_position_c {
+    background-position: center;
+}
+
+.bg_position_r {
+    background-position: right;
+}
+
+.bg-gray {
+    background-color: var(--gray);
+}
+
+.bg-fcolor {
+    background-color: var(--fcolor);
+}
+
+.bg-tcolor {
+    background-color: var(--tcolor);
+}
+
+.bg-acolor {
+    background-color: var(--acolor);
+}
+
+.bg-green {
+    background-color: var(--green);
+}/* You can add global styles to this file, and also import other style files */
+
+
+.bg-red{
+    background-color: rgb(119, 0, 0);
+}
+.bg-blue{
+    background-color: rgb(31, 31, 136);
+}
+.bg-yellow{
+    background-color: rgb(213, 213, 88);
+}
+
+
+.btn_01 {
+    background-color: var(--purple);
+    color: var(--bs-white) ;
+    border: solid;
+}
+
+.recruters_01 {
+    background-color: var(--bs-white);
+    border-radius: 20px;
+    position: relative;
+    margin-top: -98px;
+    box-shadow: 6px 7px 5px 0px #02020226;
+}
+
+.btn_01:hover {
+    color: var(--bcolor);
+    border: solid var(--blue) 1px;
+}
+
+.btn_02 {
+    background: var(--dark_purple);
+    color: var(--bs-white) !important;
+    border: solid 1px;
+}
+
+.btn_02:hover {
+    color: var(--dark_purple) !important;
+    background-color: var(--bs-white);
+    border: solid var(--dark_purple) 1px;
+}
+.form_01 input , .form_01 select , .form_01 textarea{
+    margin-top: 20px;
+}

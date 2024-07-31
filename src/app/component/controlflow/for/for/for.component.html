@@ -1,0 +1,51 @@
+<div class="container">
+  <div class="row p-5 text-center border bg-purple rounded-3 mb-5">
+    <div class="col-md-12">
+      <div class="display-6 fw-bold text-white">Control Flow <small class="fs-6">(For) </small></div>
+      <span class="text-white "></span>
+    </div>
+  </div>
+
+</div>
+<div class="container">
+  <div class="row border py-3 rounded-3 justify-content-center">
+    <div class="col-md-3">
+      <ul>
+        @for (item of CityArray; track $index) {
+        <li>{{item}}</li>
+        }
+      </ul>
+    </div>
+    <div class="col-md-3 text-center">
+      <select name="" id="">
+        @for (item of CityArray; track $index) {
+            <option value="">{{item}}</option>
+        }
+      </select>
+    </div>
+    <div class="col-md-3 text-center">
+      <table class="table table-border">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>City</th>
+            <th>IsActive</th>
+          </tr>
+        </thead>
+        <tbody>
+            @for (item of studentlist; track $index) {
+          <tr>
+            <td>{{item.studentId}}</td>
+            <td>{{item.name}}</td>
+            <td>{{item.City}}</td>
+            <td>{{item.isActive}}</td>
+          </tr>
+        }
+
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+</div>

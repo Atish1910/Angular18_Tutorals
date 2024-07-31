@@ -1,0 +1,114 @@
+<div class="container">
+  <div class="row text-white text-center p-5 rounded-3 bg-purple">
+    <div class="col-md-12">
+      <h1 class="display-4">Forms</h1>
+      <span lass="text-white display-6">(Template Driven Forms)</span>
+    </div>
+  </div>
+  <div class="row form_01">
+    <div class="col-md-8  my-5 p-5 border  rounded-3">
+      <div class="text-center h3 fw-bold">Template Driven Form </div>
+      <form class="row" #form="ngForm">
+        <div class="col-md-12">
+          <input type="text" placeholder="Your Name" class="form-control" minlength="3" #fName="ngModel" name="name"
+            [(ngModel)]="studentObj.name" id="validationCustom01" value="Mark" required>
+          <div class="">
+
+            @if ((fName.touched || fName.dirty) && fName.errors?.['required']) {
+            <span class="text-danger">This Feild Is Required</span>
+            }
+            @else if ( (fName.touched || fName.dirty) && fName.errors?.['minlength']) {
+            <span class="text-danger">Min 3 Char Required</span>
+            }
+          </div>
+          <div class="">
+            {{fName.errors | json}}
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="number" placeholder="Your Phone Number"  class="form-control" maxlength="10" minlength="10" #fPhone="ngModel"  name="mobileNumber"
+            [(ngModel)]="studentObj.mobileNumber" id="validationCustom02" required>
+          <div class="">
+            @if ((fPhone.touched || fPhone.dirty) && fPhone.errors?.['required']) {
+              <span class="text-danger">this Feild Is Required</span>
+            }
+            @else if((fPhone.touched || fPhone.dirty) && fPhone.errors?.['minlength'] && fPhone.errors?.['maxlength']) {
+              <span class="text-danger">You Need To Enter Your 10 Digit Valid Mobile Number</span>
+            }
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="input-group has-validation">
+            <input type="text" placeholder="Your Email Id" class="form-control" name="email" #femail ="ngModel"
+              [(ngModel)]="studentObj.email"  aria-describedby="inputGroupPrepend"
+              required>
+            <div class="">
+              @if ((femail.touched || femail.dirty) && femail.errors?.['required']) {
+                <span class="text-danger">Enter Your Mail Id</span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <select  class="form-select" aria-label="Default select example" name="state" [(ngModel)]="studentObj.state" required>
+            <option selected>Open this select menu</option>
+            <option value="maharashrta">Maharashrta</option>
+            <option value="goa">Goa</option>
+            <option value="gujrat">Gujrat</option>
+          </select>
+          <div class="invalid-feedback">
+            Please select a valid state.
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input type="text" placeholder="Your City" class="form-control" name="city" #fCity="ngModel" [(ngModel)]="studentObj.city"
+            id="validationCustom03" required>
+          <div class="">
+            @if ((fCity.touched || fCity.dirty) && fCity.errors?.["required"]) {
+              <span class="text-danger">This Feild Is Required</span>
+            }
+          </div>
+        </div>
+        <div class="col-12 ">
+          <div class="form-floating">
+            <textarea class="form-control" [(ngModel)]="studentObj.message" name="message" required="" minlength="50" #fMsg="ngModel" placeholder="Leave a comment here" id="floatingTextarea2"
+              style="height: 100px"></textarea>
+            <label for="floatingTextarea2">Comments</label>
+          </div>
+          <div class="">
+
+            @if ((fMsg.touched || fMsg.dirty) && fMsg.errors?.["required"]) {
+              <span class="text-danger">You Need To Enter Your Message</span>
+            }
+            @else if ((fMsg.touched || fMsg.dirty) && fMsg.errors?.["minlength"]) {
+              <span class="text-danger">Write at least in 50 words</span>
+            }
+          </div>
+        </div>
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" [(ngModel)]="studentObj.isAcceptTerms" #fCheckBox type="checkbox" value="" id="invalidCheck" required>
+            <label class="form-check-label" for="invalidCheck">
+              Agree to terms and conditions
+            </label>
+            <div class="">
+              @if (fMsg.errors?.["required"]) {
+               <span class="text-danger"> You must agree before submitting.</span>
+              }
+            </div>
+          </div>
+        </div>
+        <div class="col-12 mt-3   text-center">
+          <button class="btn btn-success me-4" (click)="resetForm()" type="submit">Reset Form</button>
+          <!-- {{form.invalid}} -->
+          <button class="btn btn-primary" [disabled]="form.invalid" type="submit" (click)="onSubmit()">Submit
+            form</button>
+        </div>
+      </form>
+
+    </div>
+    <div class="col-md-4 ">
+      {{formValue | json}}
+    </div>
+  </div>
+</div>

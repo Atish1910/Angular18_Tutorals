@@ -1,0 +1,51 @@
+<div class="container">
+    <div class="row p-5 text-center border bg-purple rounded-3 mb-5">
+      <div class="col-md-12">
+        <div class="display-6 fw-bold text-white">Control Flow <small class="fs-6">(Switch) </small></div>
+        <span class="text-white "></span>
+      </div>
+    </div>
+  
+  </div>
+  <div class="container">
+    <div class="row border py-3 rounded-3 justify-content-center">
+        <div class="col-md-6">
+            write a number from 1 to 7 to know day
+            <input type="text" [(ngModel)]="dayNumber">
+        </div>
+        <div class="col-md-6">
+            day Name Is : 
+            @switch (dayNumber) {
+                @case ('1') {
+                    <span>monday</span>
+                }
+                @case ('2') {
+                    <span>Tuesday</span>
+                }
+                @case ('3') {
+                    <span>Wedensday</span>
+                }
+                @case ('4') {
+                    <span>Thirsday</span>
+                }
+                @case ('5') {
+                    <span>Friday</span>
+                }
+                @case ('6') {
+                    <span>Saturday</span>
+                }
+                @case ('7') {
+                    <span>Sunday</span>
+                }
+                @case ('') {
+                    <span>Write Date from 1 to 7</span>
+                }
+                @default {
+                    <span>select date from input</span>
+                }
+                
+            }
+        </div>
+    </div>
+  </div>
+  

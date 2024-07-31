@@ -1,0 +1,59 @@
+<div class="container">
+    <div class="row p-5 text-center border bg-purple rounded-3 mb-5">
+      <div class="col-md-12">
+        <div class="display-6 fw-bold text-white">Control Flow <small class="fs-6">(IfElse) </small></div>
+        <span class="text-white "></span>
+      </div>
+    </div>
+    <div class="row border py-3 rounded-3">
+      <div class="col-md-3 text-center">
+        @if(isMyDiv1Visible){
+            <div class="p-3 mb-4 bg-dark_purple text-white">Div-1</div>
+        }
+
+        <button class="btn btn-secondary bg-red me-5" (click)="showDiv1()">Show</button>
+        <button class="btn btn-primary bg-blue" (click)="hideDiv1()" >Hide</button>
+      </div>
+  
+      <div class="col-md-3 text-center">
+        @if(isMyDiv2Visible){
+            
+            <div class="p-3 mb-4 bg-purple">Div-2</div>
+        }
+
+        <button class="btn btn-primary" (click)="toggleDiv2()">toggle (Click me To Hide Above Div)</button>
+      </div>
+  
+      <div class="col-md-3 text-center">
+        @if(num1 == num2){
+            <div  class="p-3 mb-4 ">Div-3</div>
+        }
+        <input type="text" [(ngModel)]="num1" placeholder="num-1">
+        <input type="text" [(ngModel)]="num2" placeholder="num-2">
+      </div>
+  
+      <div class="col-md-3 text-center">
+        @if(selectStatus == 'active'){
+            <div class="p-3 mb-4">Active</div>
+        }
+        @else if (selectStatus == 'de-active') {
+            <div class="p-3 mb-4">De Active</div>
+        }
+        @else if (selectStatus == 'pending') {
+            <div class="p-3 mb-4">Pending</div>
+        }
+        @else {
+            <div class="p-3 mb-4">Select Status</div>
+        }
+        
+        <select [(ngModel)]="selectStatus" >
+          <option value="select-status">Select Status</option>
+          <option value="active">Active</option>
+          <option value="de-active">De-Active</option>
+          <option value="pending">Pending</option>
+        </select>
+      </div>
+    </div>
+  </div>
+  
+  

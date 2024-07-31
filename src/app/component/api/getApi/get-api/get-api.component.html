@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row text-white text-center p-5 rounded-3 bg-purple">
+    <div class="col-md-12">
+      <h1 class="display-4">API</h1>
+      <span lass="text-white display-6">(Get Api)</span>
+    </div>
+  </div>
+  <div class="row mt-5">
+    <div class="row">
+      <div class="col-md-6 p-5 border rounded-3 text-center">
+
+        <div class="">Click Below Button to get Data From Api</div>
+        <div class="my-3">
+          <select name="" class="form-select" id="">
+            @for (item of listOfUers; track $index) {
+            <option value="">{{item.name}}</option>
+            }
+          </select>
+
+          <button class="btn btn-success px-5 mt-4" (click)="getAllUser()">Button</button>
+        </div>
+      </div>
+      <div class="col-md-6 p-5 border rounded-3 text-center">
+
+        <div class="">Click Below Button to get Data From Api</div>
+        <div class="my-3">
+          <select name="" class="form-select" id="">
+            @for (item of listOfAllStudents; track $index) {
+            <option value="">{{item.name}}</option>
+            }
+          </select>
+
+          <button class="btn btn-success px-5 mt-4" (click)="getAllStudents()">Button</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
