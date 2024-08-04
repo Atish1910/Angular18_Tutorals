@@ -1,0 +1,6 @@
+to use service in our project write cmd
+ng g s servicename
+
+what is service : service is just a file in angular where we usually shore our reusble code and we can use that code in our file by just creation of object.
+service file is mejrorly use to write api call 
+wee also create function opertaion & store our veriable  

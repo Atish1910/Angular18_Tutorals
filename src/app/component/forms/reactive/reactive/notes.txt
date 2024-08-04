@@ -1,0 +1,3 @@
+dependency in reactive forms
+ import: FormControl, FormGroup, ReactiveFormsModule, Validators  from '@angular/forms'
+        JsonPipe  angular/common 

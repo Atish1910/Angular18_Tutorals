@@ -9,6 +9,11 @@ import { PipeComponent } from './component/pipes/pipe/pipe.component';
 import { TemplateComponent } from './component/forms/template/template/template.component';
 import { ReactiveComponent } from './component/forms/reactive/reactive/reactive.component';
 import { GetApiComponent } from './component/api/getApi/get-api/get-api.component';
+import { PostApiComponent } from './component/api/postApi/post-api/post-api.component';
+import { ApiCallByServiceComponent } from './component/service/api-call-by-service/api-call-by-service.component';
+import { LifeCycleEventComponent } from './component/lifeCycleEvent/life-cycle-event/life-cycle-event.component';
+import { NgTemplateComponent } from './component/ng-template/ng-template.component';
+import { NgContainerComponent } from './component/ng-container/ng-container.component';
 
 export const routes: Routes = [
     {
@@ -51,5 +56,25 @@ export const routes: Routes = [
     {
         path : 'getApi',
         component : GetApiComponent
+    },
+    {
+        path : 'postApi',
+        component : PostApiComponent
+    },
+    {
+        path : 'service',
+        component : ApiCallByServiceComponent
+    },
+    {
+        path : 'lifecycleevent',
+        component : LifeCycleEventComponent
+    },
+    {
+        path : 'ngtemplate', // routerLink from ts
+        component : NgTemplateComponent
+    },
+    {
+        path : 'ngContainer', // routerLink from ts
+        component : NgContainerComponent
     }
 ];

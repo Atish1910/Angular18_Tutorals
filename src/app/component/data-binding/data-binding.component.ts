@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal,OnChanges, SimpleChanges } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
@@ -8,7 +8,11 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './data-binding.component.html',
   styleUrl: './data-binding.component.css'
 })
-export class DataBindingComponent {
+export class DataBindingComponent implements OnChanges {
+
+  ngOnChanges(changes: SimpleChanges): void {
+      console.log("ngOnChanges")
+  }
 
 // data binding
   myName : string = "Atishhhh"

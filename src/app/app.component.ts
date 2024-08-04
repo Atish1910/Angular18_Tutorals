@@ -9,6 +9,9 @@ import { ForComponent } from './component/controlflow/for/for/for.component';
 import { SwitchComponent } from './component/controlflow/switch/switch/switch.component';
 import { PipeComponent } from './component/pipes/pipe/pipe.component';
 import { TemplateComponent } from './component/forms/template/template/template.component';
+import { PostApiComponent } from './component/api/postApi/post-api/post-api.component';
+import { ApiCallByServiceComponent } from './component/service/api-call-by-service/api-call-by-service.component';
+import { LifeCycleEventComponent } from './component/lifeCycleEvent/life-cycle-event/life-cycle-event.component';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +26,10 @@ import { TemplateComponent } from './component/forms/template/template/template.
     ForComponent,
     SwitchComponent,
     PipeComponent,
-    TemplateComponent
+    TemplateComponent,
+    PostApiComponent,
+    ApiCallByServiceComponent,
+    LifeCycleEventComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
@@ -45,6 +51,11 @@ export class AppComponent {
     {name: "TemplateForm", routerLink : "templateForm"},
     {name: "ReactiveForm", routerLink : "reactiveForm"},
     {name: "get Api", routerLink : "getApi"},
+    {name: "post Api", routerLink : "postApi"},
+    {name: "Service", routerLink : "service"},
+    {name: "life Cycle Event", routerLink : "lifecycleevent"},
+    {name: "Ng Template", routerLink : "ngtemplate"},
+    {name: "Ng Container", routerLink : "ngContainer"}
   ]
 
 

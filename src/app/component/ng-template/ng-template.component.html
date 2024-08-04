@@ -1,0 +1,45 @@
+<section>
+  <div class="container">
+    <div class="row text-white text-center p-5 rounded-3 bg-purple">
+      <div class="col-md-12">
+        <h1 class="display-4">Ng Template</h1>
+        <span lass="text-white display-6">()</span>
+      </div>
+    </div>
+    <div class="row my-5">
+      <div class="col-md-3 border rounded-3" *ngIf="isUserloggedIn ; else Notlogged">
+        <div class="bg-purple p-3">
+          {{loggedinuserName}}
+        </div>
+      </div>
+      <ng-template #Notlogged>
+        <div class="bg-danger">
+          <span>user Not logged in</span>
+        </div>
+      </ng-template>
+
+      <div class="col-md-4 border rounded-3">
+        <ng-template #dynamicTem>
+          <p>hi i am from Dynamic Template</p>
+        </ng-template>
+      </div>
+
+      <div class="col-md-4">
+        <div class="" #dynamicContainer>
+            click on below button to load Content: 
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-3"></div>
+      <div class="col-md-3"></div>
+
+      <div class="col-md-4 border rounded-3">
+        <div class="mt-2">
+          <button class="btn btn-danger" (click)="loadTemplate()">load Content</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
