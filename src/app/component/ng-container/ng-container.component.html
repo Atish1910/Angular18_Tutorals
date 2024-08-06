@@ -6,51 +6,51 @@
       </div>
     </div>
     <div class="row">
-        <div class="col-md-4">
-            <ng-container *ngIf="isContainer">
-                hi I am Ng template
+      <div class="col-md-4">
+        <ng-container *ngIf="isContainer">
+          hi I am Ng template
+        </ng-container>
+      </div>
+      <div class="col-md-8">
+        <table class="table table-border">
+          <thead>
+            <tr>
+              <th>Id</th>
+              <th>Name</th>
+              <th>username </th>
+              <th>Email</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngIf="IsApiRunning">
+              <tr>
+                <td colspan="4" class="text-center">
+                  <div class="spinner-border text-muted"></div>
+                  <div class="spinner-border text-primary"></div>
+                  <div class="spinner-border text-success"></div>
+                  <div class="spinner-border text-info"></div>
+                  <div class="spinner-border text-warning"></div>
+                  <div class="spinner-border text-danger"></div>
+                  <div class="spinner-border text-secondary"></div>
+                  <div class="spinner-border text-dark"></div>
+                  <div class="spinner-border text-light"></div>
+                </td>
+              </tr>
             </ng-container>
-        </div>
-        <div class="col-md-8">
-            <table class="table table-border">
-                <thead>
-                  <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>username </th>
-                    <th>Email</th>
-                  </tr>
-                </thead>
-                <tbody>
-                    <ng-container *ngIf="IsApiRunning">
-                        <tr>
-                            <td colspan="4" class="text-center">
-                                <div class="spinner-border text-muted"></div>
-                        <div class="spinner-border text-primary"></div>
-                        <div class="spinner-border text-success"></div>
-                        <div class="spinner-border text-info"></div>
-                        <div class="spinner-border text-warning"></div>
-                        <div class="spinner-border text-danger"></div>
-                        <div class="spinner-border text-secondary"></div>
-                        <div class="spinner-border text-dark"></div>
-                        <div class="spinner-border text-light"></div>
-                            </td>
-                        </tr>
-                    </ng-container>
-                    <ng-container *ngIf="!IsApiRunning">
-                        <tr *ngFor="let StudentsData of userlist">
-                          <td>{{StudentsData.studentId}}</td>
-                          <td>{{StudentsData.name}}</td>
-                          <td>{{StudentsData.username}}</td>
-                          <td>{{StudentsData.email}}</td>
-                        </tr>
-                    </ng-container>
-                </tbody>
-              </table>
-        </div>
-        <div class="col-md-12">
-            <button class="btn btn-primary" (click)="getuers()">load Content</button>
-        </div>
+            <ng-container *ngIf="!IsApiRunning">
+              <tr *ngFor="let StudentsData of userlist">
+                <td>{{StudentsData.studentId}}</td>
+                <td>{{StudentsData.name}}</td>
+                <td>{{StudentsData.username}}</td>
+                <td>{{StudentsData.email}}</td>
+              </tr>
+            </ng-container>
+          </tbody>
+        </table>
+      </div>
+      <div class="col-md-12">
+        <button class="btn btn-primary" (click)="getuers()">load Content</button>
+      </div>
     </div>
   </div>
 </section>

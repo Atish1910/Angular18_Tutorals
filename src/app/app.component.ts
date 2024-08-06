@@ -55,7 +55,8 @@ export class AppComponent {
     {name: "Service", routerLink : "service"},
     {name: "life Cycle Event", routerLink : "lifecycleevent"},
     {name: "Ng Template", routerLink : "ngtemplate"},
-    {name: "Ng Container", routerLink : "ngContainer"}
+    {name: "Ng Container", routerLink : "ngContainer"},
+    {name: "View Child", routerLink : "viewchild"}
   ]
 
 

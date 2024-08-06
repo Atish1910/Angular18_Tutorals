@@ -14,6 +14,7 @@ import { ApiCallByServiceComponent } from './component/service/api-call-by-servi
 import { LifeCycleEventComponent } from './component/lifeCycleEvent/life-cycle-event/life-cycle-event.component';
 import { NgTemplateComponent } from './component/ng-template/ng-template.component';
 import { NgContainerComponent } from './component/ng-container/ng-container.component';
+import { ViewchildComponent } from './component/viewchild/viewchild.component';
 
 export const routes: Routes = [
     {
@@ -76,5 +77,9 @@ export const routes: Routes = [
     {
         path : 'ngContainer', // routerLink from ts
         component : NgContainerComponent
+    },
+    {
+        path : 'viewchild', // routerLink from ts
+        component : ViewchildComponent
     }
 ];
