@@ -15,71 +15,92 @@ import { LifeCycleEventComponent } from './component/lifeCycleEvent/life-cycle-e
 import { NgTemplateComponent } from './component/ng-template/ng-template.component';
 import { NgContainerComponent } from './component/ng-container/ng-container.component';
 import { ViewchildComponent } from './component/viewchild/viewchild.component';
-
+import { LoginComponent } from './component/login/login.component';
+import { LayoutComponent } from './component/layout/layout.component';
+import { authGuard } from './component/service/auth.guard';
 export const routes: Routes = [
+
     {
-        path : 'directive-attribute',
-        component : AttributeDirectiveComponent
+        path : '',
+        redirectTo : 'login',
+        pathMatch : 'full'
     },
     {
-        path : 'directive-structural',
-        component : StructuralDirectiveComponent
+        path : 'login',
+        component:LoginComponent,
     },
     {
-        path : 'data-binding',
-        component : DataBindingComponent
-    },
-    {
-        path : 'ifelse',
-        component : IfelseComponent
-    },
-    {
-        path : 'for',
-        component : ForComponent
-    },
-    {
-        path : 'switch',
-        component : SwitchComponent
-    },
-    {
-        path : 'pipe',
-        component : PipeComponent
+        path : '',
+        component:LayoutComponent,
+        children : [
+            {
+                path : 'directive-attribute',
+                component : AttributeDirectiveComponent
+            },
+            {
+                path : 'directive-structural',
+                component : StructuralDirectiveComponent
+            },
+            {
+                path : 'data-binding',
+                component : DataBindingComponent
+            },
+            {
+                path : 'ifelse',
+                component : IfelseComponent
+            },
+            {
+                path : 'for',
+                component : ForComponent
+            },
+            {
+                path : 'switch',
+                component : SwitchComponent
+            },
+            {
+                path : 'pipe',
+                component : PipeComponent
+            },
+            
+            {
+                path : 'templateForm',
+                component : TemplateComponent,
+                canActivate : [authGuard]
+            },
+            {
+                path : 'reactiveForm',
+                component : ReactiveComponent,
+                canActivate : [authGuard]
+            },
+            {
+                path : 'getApi',
+                component : GetApiComponent
+            },
+            {
+                path : 'postApi',
+                component : PostApiComponent
+            },
+            {
+                path : 'service',
+                component : ApiCallByServiceComponent
+            },
+            {
+                path : 'lifecycleevent',
+                component : LifeCycleEventComponent
+            },
+            {
+                path : 'ngtemplate', // routerLink from ts
+                component : NgTemplateComponent
+            },
+            {
+                path : 'ngContainer', // routerLink from ts
+                component : NgContainerComponent
+            },
+            {
+                path : 'viewchild', // routerLink from ts
+                component : ViewchildComponent
+            }
+        ]
     },
     
-    {
-        path : 'templateForm',
-        component : TemplateComponent
-    },
-    {
-        path : 'reactiveForm',
-        component : ReactiveComponent
-    },
-    {
-        path : 'getApi',
-        component : GetApiComponent
-    },
-    {
-        path : 'postApi',
-        component : PostApiComponent
-    },
-    {
-        path : 'service',
-        component : ApiCallByServiceComponent
-    },
-    {
-        path : 'lifecycleevent',
-        component : LifeCycleEventComponent
-    },
-    {
-        path : 'ngtemplate', // routerLink from ts
-        component : NgTemplateComponent
-    },
-    {
-        path : 'ngContainer', // routerLink from ts
-        component : NgContainerComponent
-    },
-    {
-        path : 'viewchild', // routerLink from ts
-        component : ViewchildComponent
-    }
 ];

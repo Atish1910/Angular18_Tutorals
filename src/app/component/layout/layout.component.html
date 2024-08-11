@@ -1,0 +1,43 @@
+<div class="container-fluid py-3 bg-purple mb-5">
+    <div class="">
+      <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="javascript:void(0)">Logo</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mynavbar">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="mynavbar">
+            <ul class="navbar-nav me-auto">
+              @for (item of navlist; track $index) {
+                <li class="nav-item" style="margin-top:-12px;">
+                  <a class="nav-link text-capitalize" routerLink="{{item.routerLink}}">{{item.name}}</a>
+                </li>
+              }
+            </ul>
+            
+        <form class="d-flex">
+          <button class="btn btn-primary" type="button" (click)="logout()">logout</button>
+        </form>
+          </div>
+        </div>
+      </nav>    
+    </div>
+  </div>
+
+
+  
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 text-center p-5 border rounded-3 bg-yellow">
+        <h1 class="display-1 text-white ">App Component</h1>
+        <p class="text-white">Hi I Am App Component</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- <app-data-binding></app-data-binding>
+  <app-structural-directive></app-structural-directive>
+  <app-attribute-directive></app-attribute-directive>
+  <app-ifelse></app-ifelse> -->
+  <router-outlet />
+  

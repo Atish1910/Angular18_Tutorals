@@ -15,10 +15,10 @@
           <div class="">
 
             @if ((fName.touched || fName.dirty) && fName.errors?.['required']) {
-            <span class="text-danger">This Feild Is Required</span>
+            <span class="text-danger">{{validationMessgae.REQUIRED}}</span>
             }
             @else if ( (fName.touched || fName.dirty) && fName.errors?.['minlength']) {
-            <span class="text-danger">Min 3 Char Required</span>
+            <span class="text-danger">{{validationMessgae.MIN_LINGTH}}</span>
             }
           </div>
           <div class="">
@@ -30,7 +30,7 @@
             [(ngModel)]="studentObj.mobileNumber" id="validationCustom02" required>
           <div class="">
             @if ((fPhone.touched || fPhone.dirty) && fPhone.errors?.['required']) {
-              <span class="text-danger">this Feild Is Required</span>
+              <span class="text-danger">{{validationMessgae.MIN_LINGTH}}</span>
             }
             @else if((fPhone.touched || fPhone.dirty) && fPhone.errors?.['minlength'] && fPhone.errors?.['maxlength']) {
               <span class="text-danger">You Need To Enter Your 10 Digit Valid Mobile Number</span>
@@ -65,7 +65,7 @@
             id="validationCustom03" required>
           <div class="">
             @if ((fCity.touched || fCity.dirty) && fCity.errors?.["required"]) {
-              <span class="text-danger">This Feild Is Required</span>
+              <span class="text-danger">{{validationMessgae.REQUIRED}}</span>
             }
           </div>
         </div>
@@ -78,7 +78,7 @@
           <div class="">
 
             @if ((fMsg.touched || fMsg.dirty) && fMsg.errors?.["required"]) {
-              <span class="text-danger">You Need To Enter Your Message</span>
+              <span class="text-danger">{{validationMessgae.REQUIRED}}</span>
             }
             @else if ((fMsg.touched || fMsg.dirty) && fMsg.errors?.["minlength"]) {
               <span class="text-danger">Write at least in 50 words</span>

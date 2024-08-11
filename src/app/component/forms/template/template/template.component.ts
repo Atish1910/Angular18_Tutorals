@@ -7,6 +7,7 @@ import {
 import {
   FormsModule
 } from '@angular/forms';
+import { constant } from '../../../constant/constant';
 
 @Component({
   selector: 'app-template',
@@ -26,6 +27,9 @@ export class TemplateComponent {
     message : "",
     isAcceptTerms: false
   }
+
+  // use this messgae from constant file
+  validationMessgae : any = constant.VALIDATION_MESSAGE;
 
   formValue: any;
 
