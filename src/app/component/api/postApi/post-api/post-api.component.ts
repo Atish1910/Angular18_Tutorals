@@ -2,6 +2,9 @@ import {JsonPipe} from '@angular/common';
 import {  HttpClient} from '@angular/common/http';
 import {Component,inject,OnInit} from '@angular/core';
 import {  FormControl,  FormGroup,  FormsModule,  ReactiveFormsModule,  Validators} from '@angular/forms';
+import { DepartMent } from '../../../modal/class/department';
+import { IDepartMentList } from '../../../modal/interface/IDepartment';
+DepartMent
 @Component({
   selector: 'app-post-api',
   standalone: true,
@@ -11,11 +14,20 @@ import {  FormControl,  FormGroup,  FormsModule,  ReactiveFormsModule,  Validato
 })
 export class PostApiComponent implements OnInit {
 
-  deptObj: any = {
-    "departmentId": 0,
-    "departmentName": "",
-    "departmentLogo": ""
-  }
+  // below data is replace with class and interface Department is initilese in model/ class / department.ts;
+  
+  // deptObj: any = {
+  //   "departmentId": 0,
+  //   "departmentName": "",
+  //   "departmentLogo": ""
+  // }
+
+
+  
+  deptObj: DepartMent = new DepartMent ();
+
+
+  
 
   departmentForm: FormGroup = new FormGroup({
     deptName: new FormControl("", [(Validators.required)]),
@@ -53,7 +65,11 @@ export class PostApiComponent implements OnInit {
     this.deptObj = this.resetData;
   }
 
-  deptList: any[] = [];
+
+  // below data is replace with class and interface Department is initilese in model/ Interface / department.ts;
+  // deptList: any[] = [];
+
+  deptList: IDepartMentList[] = [];
 
   getDepartment() {
     this.http.get("https://projectapi.gerasim.in/api/Complaint/GetParentDepartment").subscribe((res: any) => {

@@ -13,7 +13,7 @@
         <div class="my-3">
           <select name="" class="form-select" id="">
             @for (item of listOfUers; track $index) {
-            <option value="">{{item.name}}</option>
+            <option value="">{{item.email}}</option>
             }
           </select>
 
@@ -26,11 +26,11 @@
         <div class="my-3">
           <select name="" class="form-select" id="">
             @for (item of listOfAllStudents; track $index) {
-            <option value="">{{item.name}}</option>
+            <option value="">{{item.email}}</option>
             }
           </select>
 
-          <button class="btn btn-success px-5 mt-4" (click)="getAllStudents()">Button</button>
+          <button class="btn btn-success px-5 mt-4" (click)="getAll()">Button</button>
         </div>
       </div>
     </div>

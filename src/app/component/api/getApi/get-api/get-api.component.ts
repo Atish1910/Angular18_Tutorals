@@ -1,5 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { User } from '../../../modal/class/department';
+import { IAllstudent } from '../../../modal/interface/IDepartment';
 
 @Component({
   selector: 'app-get-api',
@@ -10,7 +12,7 @@ import { Component } from '@angular/core';
 })
 export class GetApiComponent {
 
-  listOfUers : any [] = []
+  listOfUers : User [] = []
 
   constructor (private http : HttpClient){
 
@@ -27,9 +29,9 @@ export class GetApiComponent {
     })
   }
 
-  listOfAllStudents : any [] = []
+  listOfAllStudents : IAllstudent [] = []
 
-  getAllStudents(){
+  getAll(){
     debugger
 
     this.http.get("https://projectapi.gerasim.in/api/RealEstate/GetAllCustomers").subscribe((res : any) =>{
